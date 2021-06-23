@@ -15,6 +15,7 @@ class User < ApplicationRecord
     validates :username, :email, :password_digest, :session_token, presence: true
     validates :username, uniqueness: { message: "^Username already taken" }
     validates :email, uniqueness: { message: "^Email already taken" }
+    after_initialize :ensure_session_token
 
 
 
@@ -39,5 +40,26 @@ class User < ApplicationRecord
         return nil if user.nil?
 
         user.is_password?(password) ? user : nil
+    end
+
+    def self.generate_session_token
+        begin
+            session_token = SecureRandom::urlsalfe_base64(16)
+        end while User.exists?(session_token: session_token)
+
+        session_token
+    end
+
+
+    def reset_session_token
+        self.session_token = self.class.generate_session_token
+        self.save!
+        self.session_token
+    end
+
+    private
+
+    def ensure_session_token
+        self.session_token ||= self.class.generate_session_token
     end
 end
