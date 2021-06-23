@@ -1,3 +1,26 @@
-<% action_url = action == signup ? users_url : session_url %>
+<% action_url = (action == "signup") ? users_url : session_url %>
+<% submit_value = (action == "signup") ? "Signup" : "Login" %>
 
-<form action="<%= action_url %>"></form>
+
+<form action="<%= action_url %>" method = "post">
+    <%= auth_token %>
+
+    <% if action == "signup" %>
+        <label for="user_username">Username:</label>
+        <input type="text" name="user[username]" id="user_username">
+        <br>
+        <br>
+    <% end %>
+
+    <label for="user_email">Email:</label>
+    <input type="email" name="user[email]" id="user_email">
+    <br>
+    <br>
+
+    <label for="user_password">Password:</label>
+    <input type="password" name="user[password]" id="user_password">
+    <br>
+    <br>
+
+    <input type="submit" value="<%= submit_value %>">
+</form>
