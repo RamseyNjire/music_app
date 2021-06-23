@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
         if user.nil?
             render json: 'Email or password is incorrect'
         else
+            login!(user)
             redirect_to user_url(user)
         end
     end

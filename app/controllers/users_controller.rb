@@ -6,7 +6,8 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
-            render json: @user
+            login!(@user)
+            redirect_to user_url(@user)
         else
             render json: @user.errors.full_messages
         end
