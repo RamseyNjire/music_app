@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user
+    helper_method :current_user, :logged_in?
     def login!(user)
         @current_user = user
         session[:session_token] = user.session_token
