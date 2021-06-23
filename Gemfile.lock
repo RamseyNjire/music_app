@@ -82,6 +82,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    custom_error_message (1.1.1)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.3)
@@ -211,6 +212,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  custom_error_message
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pgreset

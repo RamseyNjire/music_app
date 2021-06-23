@@ -12,4 +12,14 @@
 #
 class User < ApplicationRecord
     validates :username, :email, :password_digest, :session_token, presence: true
+    validates :username, uniqueness: { message: "^Username already taken" }
+    validates :email, uniqueness: { message: "^Email already taken" }
+
+
+
+
+
+    # def password=(password)
+    #     self.password_digest = BCrypt::Password.create(password)
+    # end
 end
