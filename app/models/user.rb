@@ -12,7 +12,8 @@
 #
 class User < ApplicationRecord
     attr_reader :password
-    validates :username, :email, :password_digest, :session_token, presence: true
+    validates :username, :email, :session_token, presence: true
+    validates :password_digest, presence: { message: "^Password cannot be blank" }
     validates :username, uniqueness: { message: "^Username already taken" }
     validates :email, uniqueness: { message: "^Email already taken" }
     after_initialize :ensure_session_token
@@ -44,7 +45,7 @@ class User < ApplicationRecord
 
     def self.generate_session_token
         begin
-            session_token = SecureRandom::urlsalfe_base64(16)
+            session_token = SecureRandom::urlsafe_base64(16)
         end while User.exists?(session_token: session_token)
 
         session_token
