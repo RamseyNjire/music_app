@@ -11,6 +11,7 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
+    attr_reader :password
     validates :username, :email, :password_digest, :session_token, presence: true
     validates :username, uniqueness: { message: "^Username already taken" }
     validates :email, uniqueness: { message: "^Email already taken" }
@@ -19,7 +20,12 @@ class User < ApplicationRecord
 
 
 
-    # def password=(password)
-    #     self.password_digest = BCrypt::Password.create(password)
-    # end
+    def password=(password)
+        @password = password
+        self.password_digest = BCrypt::Password.create(password)
+    end
+
+    def is_password?(password)
+        BCrypt::Password.new(self.password_digest).is_password?(password)
+    end
 end
