@@ -13,3 +13,160 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+/* === CSS RESETS AND BASIC STYLES === */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* === GENERAL BODY STYLING === */
+
+body {
+    font-family: sans-serif;
+    color: var(--music-gray)
+}
+
+/* === COLOR THEME VARIABLES === */
+
+:root {
+    --first-purple: #140530;
+    --second-purple: #4a194c;
+    --third-purple: #623793;
+    --music-gray: #766d7d;
+    --music-green: #6da34f;
+}
+
+/* === NAVBAR === */
+
+nav {
+    background-color: var(--music-gray);
+    padding: 10px;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.login_signup_button {
+    display: flex;
+    background-color: var(--music-green);
+    width: auto;
+    padding: 5px 10px;
+    margin-left: auto;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+/* === MAIN ===*/
+
+main {
+    padding-top: 10px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+/* === LOGIN AND SIGNUP FORM === */
+
+.login_signup_form {
+    /* padding: 70px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 350px;
+    font-size: 20px;
+    border: 1px solid var(--music-gray);
+    border-radius: 5px;
+}
+
+.login_signup_form input[type="submit"] {
+    margin:     0 auto 20px;
+    height: auto;
+    font-size: 20px;
+    padding: 10px;
+    color: var(--second-purple)
+}
+
+.login_signup_form input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.input_field_holder {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+.input_field_holder label {
+    margin-left: 0;
+    flex-grow: 1;
+}
+
+.input_field_holder input {
+    width: 60%;
+}
+
+.last_input {
+    margin-bottom: 30px;
+}
+
+

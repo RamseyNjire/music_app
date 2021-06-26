@@ -10,22 +10,26 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <ul>
-        <li>Logged in as: <%= current_user.username %></li>
-        <li>
-          <form action="<%= session_url %>" method="post">
-            <%= auth_token %>
-            <%= delete_method %>
-            <input type="submit" value="Logout">
-          </form>
-        </li>
-      </ul>
-    <% elsif current_page?(new_user_url) || current_page?(root_url) %>
-      <a href="<%= new_session_url %>">Login</a>
-    <% elsif current_page?(new_session_url) %>
-      <a href="<%= new_user_url %>">Sign Up</a>
-    <% end %>
-    <%= yield %>
+    <nav>
+      <% if logged_in? %>
+        <ul class="logged_in_user">
+          <li>Logged in as: <%= current_user.username %></li>
+          <li>
+            <form action="<%= session_url %>" method="post">
+              <%= auth_token %>
+              <%= delete_method %>
+              <input type="submit" value="Logout">
+            </form>
+          </li>
+        </ul>
+      <% elsif current_page?(new_user_url) || current_page?(root_url) %>
+        <a href="<%= new_session_url %>" class="login_signup_button">Login</a>
+      <% elsif current_page?(new_session_url) %>
+        <a href="<%= new_user_url %>" class="login_signup_button">Sign Up</a>
+      <% end %>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
