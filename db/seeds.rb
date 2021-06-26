@@ -13,3 +13,7 @@ gideon = User.create(username: "Gideon", email: "gideon@example.com", password: 
 reson = User.create(username: "Reson", email: "reson@example.com", password: "password")
 brian = User.create(username: "Brian", email: "brian@example.com", password: "password")
 sophie = User.create(username: "Sophie", email: "sophie@example.com", password: "password")
+
+
+neighborhood = Band.create(name: "Neighborhood")
+sauti_sol = Band.create(name: "Sauti Sol")
