@@ -16,6 +16,14 @@
 #                           PUT    /session(.:format)                                                                       sessions#update
 #                           DELETE /session(.:format)                                                                       sessions#destroy
 #                           POST   /session(.:format)                                                                       sessions#create
+#                     bands GET    /bands(.:format)                                                                         bands#index
+#                           POST   /bands(.:format)                                                                         bands#create
+#                  new_band GET    /bands/new(.:format)                                                                     bands#new
+#                 edit_band GET    /bands/:id/edit(.:format)                                                                bands#edit
+#                      band GET    /bands/:id(.:format)                                                                     bands#show
+#                           PATCH  /bands/:id(.:format)                                                                     bands#update
+#                           PUT    /bands/:id(.:format)                                                                     bands#update
+#                           DELETE /bands/:id(.:format)                                                                     bands#destroy
 #                      root GET    /                                                                                        users#new
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
@@ -27,6 +35,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
   resource :session
+
+  resources :bands
 
 
   root to: "users#new"
