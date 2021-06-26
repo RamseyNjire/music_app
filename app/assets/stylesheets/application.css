@@ -93,6 +93,7 @@ nav {
     display: flex;
     font-family: sans-serif;
     font-size: 20px;
+    align-items: center;
 }
 
 .login_signup_button {
@@ -104,6 +105,21 @@ nav {
     text-decoration: none;
     border: 1px solid black;
     border-radius: 5px;
+    font-size: 20px;
+    color: var(--second-purple)
+}
+
+.logout_button {
+    margin-right: auto;
+}
+.logout_button:hover {
+    cursor: pointer;
+}
+
+.logged_in_user {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
 }
 
 
