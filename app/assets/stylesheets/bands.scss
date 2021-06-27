@@ -25,3 +25,10 @@
 .create_band_button {
     @include center_button;
 }
+
+.create_band_form {
+    padding: 10px;
+    .submit_band_form {
+        margin-top: 50px !important;
+    }
+}
