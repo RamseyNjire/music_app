@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+@mixin center_button {
+    margin: 5px auto;
+}
+
 .band_card {
     display: flex;
     flex-direction: column;
@@ -14,6 +18,10 @@
     min-width: 320px;
 
     a {
-        margin: 5px auto;
+        @include center_button;
     }
+}
+
+.create_band_button {
+    @include center_button;
 }
