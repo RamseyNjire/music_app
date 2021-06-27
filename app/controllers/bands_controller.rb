@@ -5,6 +5,9 @@ class BandsController < ApplicationController
         render :index
     end
 
+    def new
+    end
+
     def show
         @band = Band.find_by(id: params[:id])
 
