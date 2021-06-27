@@ -2,5 +2,8 @@
 <div class="band_card">
     <h1><%= @band.name %></h1>
 
-    <a href="<%= bands_url %>" class="login_signup_button">View Bands</a>
+    <div>
+        <a href="<%= edit_band_url(@band) %>" class="login_signup_button">Edit Band</a>
+        <a href="<%= bands_url %>" class="login_signup_button">View Bands</a>
+    </div>
 </div>

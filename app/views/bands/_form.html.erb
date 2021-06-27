@@ -1,0 +1,18 @@
+
+<% action_url = (action == :new) ? bands_url : band_url(band) %>
+<% submit_value = (action == :new) ? "Create" : "Edit" %>
+
+<form action="<%= action_url %>" method="post" class="login_signup_form create_band_form">
+    <%= auth_token %>
+
+    <% if action == :edit %>
+        <%= patch_method %>
+    <% end %>
+
+    <div class="input_field_holder">
+        <label for="band_name">Name:</label>
+        <input type="text" name="band[name]" id="band_name">
+    </div>
+
+    <input type="submit" value="<%= submit_value %>" class="login_signup_button submit_band_form">
+</form>

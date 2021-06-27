@@ -17,6 +17,11 @@ class BandsController < ApplicationController
             render json: @band.errors.full_messages
         end
     end
+    
+    def edit
+        @band = Band.find_by(id: params[:id])
+    end
+
 
     def show
         @band = Band.find_by(id: params[:id])
