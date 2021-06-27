@@ -22,6 +22,15 @@ class BandsController < ApplicationController
         @band = Band.find_by(id: params[:id])
     end
 
+    def update
+        @band = Band.find_by(id: params[:id])
+
+        if @band.update_attributes(band_params)
+            redirect_to band_url(@band)
+        else
+            render json: @band.errors.full_messages
+        end
+    end
 
     def show
         @band = Band.find_by(id: params[:id])
