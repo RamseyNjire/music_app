@@ -5,6 +5,8 @@
 
 @mixin center_button {
     margin: 5px auto;
+    display: flex;
+    justify-content: center;
 }
 
 .band_card {
@@ -31,4 +33,11 @@
     .submit_band_form {
         margin-top: 50px !important;
     }
+}
+
+.delete_band {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }

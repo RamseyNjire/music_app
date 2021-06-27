@@ -4,6 +4,11 @@
 
     <div>
         <a href="<%= edit_band_url(@band) %>" class="login_signup_button">Edit Band</a>
+        <form action="<%= band_url(@band) %>" method="post">
+            <%= auth_token %>
+            <%= delete_method %>
+            <input type="submit" value="Delete Band" class="login_signup_button delete_band">
+        </form>
         <a href="<%= bands_url %>" class="login_signup_button">View Bands</a>
     </div>
 </div>
