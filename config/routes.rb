@@ -16,6 +16,7 @@
 #                           PUT    /session(.:format)                                                                       sessions#update
 #                           DELETE /session(.:format)                                                                       sessions#destroy
 #                           POST   /session(.:format)                                                                       sessions#create
+#               band_albums GET    /bands/:band_id/albums(.:format)                                                         albums#index
 #            new_band_album GET    /bands/:band_id/albums/new(.:format)                                                     albums#new
 #                     bands GET    /bands(.:format)                                                                         bands#index
 #                           POST   /bands(.:format)                                                                         bands#create
@@ -45,7 +46,7 @@ Rails.application.routes.draw do
   resource :session
 
   resources :bands do
-    resources :albums ,only: :new
+    resources :albums , only: [:new, :index]
   end
 
   resources :albums, except: :new
