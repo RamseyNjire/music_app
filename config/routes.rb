@@ -52,5 +52,5 @@ Rails.application.routes.draw do
   resources :albums, except: :new
 
 
-  root to: "users#new"
+  # root to: "users#new"
 end
