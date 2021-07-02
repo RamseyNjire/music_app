@@ -11,4 +11,21 @@ class AlbumsController < ApplicationController
         @album = Album.new
         @band = Band.find_by(id: params[:band_id])
     end
+
+    def create
+        @album = Album.new(album_params)
+
+        if @album.save
+            redirect_to album_url(@album)
+        else
+            render json: @album.errors.full_messages
+        end
+    end
+
+
+    private
+
+    def album_params
+        params.require(:album).permit(:title, :year, :album_type, :band_id)
+    end
 end
