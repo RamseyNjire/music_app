@@ -14,3 +14,11 @@
     width: 80%;
     margin-bottom: 20px;
 }
+
+.album_table {
+    td {
+        padding: 2px;
+        border: 1px solid var(--music-gray);
+        border-collapse: collapse;
+    }
+}
