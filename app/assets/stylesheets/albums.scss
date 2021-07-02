@@ -16,6 +16,9 @@
 }
 
 .album_table {
+    caption {
+        margin-bottom: 5px;
+    }
     td {
         padding: 2px;
         border: 1px solid var(--music-gray);
