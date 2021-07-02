@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
     def index
         if params.has_key?(:band_id)
+            @band = Band.find_by(id: params[:band_id])
             @albums = Album.where(band_id: params[:band_id])
         else
             @albums = Album.all

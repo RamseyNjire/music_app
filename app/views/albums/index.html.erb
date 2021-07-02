@@ -1,0 +1,8 @@
+<h1><%= @band.name %>'s Albums</h1>
+
+<% @albums.each do |album| %>
+    <div class="band_card">
+        <%= render album %>
+        <a href="<%= album_url(album) %>" class="login_signup_button">View Album</a>
+    </div>
+<% end %>

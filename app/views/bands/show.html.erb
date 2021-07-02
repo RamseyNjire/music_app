@@ -9,6 +9,7 @@
             <%= delete_method %>
             <input type="submit" value="Delete Band" class="login_signup_button delete_band">
         </form>
+        <a href="<%= band_albums_url(@band) %>" class="login_signup_button">View Albums</a>
         <a href="<%= new_band_album_url(@band) %>" class="login_signup_button">New Album</a>
         <a href="<%= bands_url %>" class="login_signup_button">View Bands</a>
     </div>
