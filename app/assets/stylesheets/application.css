@@ -186,4 +186,14 @@ h1 {
     margin-bottom: 30px;
 }
 
+.delete_button {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.delete_button:hover {
+    cursor: pointer;
+}
+
 

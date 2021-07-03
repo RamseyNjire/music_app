@@ -2,5 +2,10 @@
     <%= render 'album', album: @album %>
 
     <a href="<%= edit_album_url(@album) %>" class="login_signup_button">Edit Album</a>
+    <form action="<%= album_url(@album) %>" method="post">
+        <%= auth_token %>
+        <%= delete_method %>
+        <input type="submit" value="Delete Album" class="login_signup_button delete_button">
+    </form>
     <a href="<%= band_albums_url(@band) %>" class="login_signup_button">Back To Albums</a>
 </div>
