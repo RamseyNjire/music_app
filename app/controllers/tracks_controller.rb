@@ -3,7 +3,8 @@ class TracksController < ApplicationController
 
   # GET /tracks or /tracks.json
   def index
-    @tracks = Track.all
+    @album = Album.find_by(id: params[:album_id])
+    @tracks = Track.where(album_id: params[:album_id])
   end
 
   # GET /tracks/1 or /tracks/1.json
