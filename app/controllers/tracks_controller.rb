@@ -25,16 +25,14 @@ class TracksController < ApplicationController
   # POST /tracks or /tracks.json
   def create
     @track = Track.new(track_params)
-
-    respond_to do |format|
-      if @track.save
-        format.html { redirect_to @track, notice: "Track was successfully created." }
-        format.json { render :show, status: :created, location: @track }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @track.errors, status: :unprocessable_entity }
-      end
+    
+    
+    if @track.save
+      redirect_to track_url(@track)
+    else
+      render json: @track.errors.full_messages
     end
+
   end
 
   # PATCH/PUT /tracks/1 or /tracks/1.json

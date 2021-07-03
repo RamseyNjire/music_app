@@ -1,6 +1,6 @@
 <h1>Editing Track</h1>
 
-<%= render 'form', track: @track %>
+<%= render 'form', track: @track, album: @album, band: @band, action: "edit" %>
 
 <%= link_to 'Show', @track %> |
 <%= link_to 'Back', tracks_path %>
