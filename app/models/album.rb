@@ -18,4 +18,5 @@ class Album < ApplicationRecord
   validates :album_type, inclusion: { in: ALBUM_TYPE,
                                       message: "^Please specify the album type" }
   belongs_to :band
+  has_many :tracks
 end
