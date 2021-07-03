@@ -1,5 +1,8 @@
-<h1>New Track</h1>
+<h1>New Track for <%= @album.title %> Album</h1>
 
-<%= render 'form', track: @track %>
+<div class="band_card">
+    <%= render 'form', track: @track, album: @album, band: @band, action: "create" %>
 
-<%= link_to 'Back', tracks_path %>
+    <a href="<%= album_tracks_url(@album) %>" class="login_signup_button">Back To Tracks</a>
+</div>
+

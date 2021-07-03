@@ -26,7 +26,7 @@
 
     <div class="radio_button_holder">
         <label for="album_type_live">Live</label>
-        <input type="radio" name="album[album_type]" value="LIVE" <%= "checked" if album.album_type == "LIVE" %>>
+        <input type="radio" name="album[album_type]" id="album_type_live" value="LIVE" <%= "checked" if album.album_type == "LIVE" %>>
 
         <label for="album_type_studio">Studio</label>
         <input type="radio" name="album[album_type]" id="album_type_studio" value="STUDIO" <%= "checked" if album.album_type == "STUDIO" %>>

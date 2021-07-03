@@ -2,6 +2,8 @@
     <%= render 'album', album: @album %>
 
     <a href="<%= edit_album_url(@album) %>" class="login_signup_button">Edit Album</a>
+    <a href="<%= album_tracks_url(@album) %>" class="login_signup_button">View Album Tracks</a>
+    <a href="<%= new_album_track_url(@album) %>" class="login_signup_button">New Track</a>
     <form action="<%= album_url(@album) %>" method="post">
         <%= auth_token %>
         <%= delete_method %>

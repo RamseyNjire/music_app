@@ -1,42 +1,96 @@
-<%= form_with(model: track, local: true) do |form| %>
-  <% if track.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(track.errors.count, "error") %> prohibited this track from being saved:</h2>
+<% action_url = (action == "create") ? tracks_url : track_url(track) %>
+<% submit_value = (action == "create") ? "Create Track" : "Update Track" %>
 
-      <ul>
-      <% track.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+
+<form action="<%= action_url %>" method="post" class="login_signup_form">
+  <%= auth_token %>
+  <% if action == "edit" %>
+    <%= delete_method %>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_area :title %>
+  <input type="hidden" name="track[album_id]" value="<%= album.id %>">
+  <input type="hidden" name="track[band_id]" value="<%= band.id %>">
+
+  <div class="input_field_holder">
+    <label for="track_title">Title:</label>
+    <input type="text" name="track[title]" id="track_title" value="<%= track.title %>">
   </div>
 
-  <div class="field">
-    <%= form.label :ord %>
-    <%= form.number_field :ord %>
+  <div class="input_field_holder">
+    <label for="track_ord">Track Number:</label>
+    <input type="text" name="track[ord]" id="track_ord" value="<%= track.ord %>">
   </div>
 
-  <div class="field">
-    <%= form.label :lyrics %>
-    <%= form.text_area :lyrics %>
-  </div>
+  <label class="radio_button_label">Track Type:</label>
 
-  <div class="field">
-    <%= form.label :album_id %>
-    <%= form.text_field :album_id %>
-  </div>
+    <div class="radio_button_holder">
+        <label for="track_type_regular">Regular</label>
+        <input type="radio" name="track[track_type]" id="track_type_regular" value="REGULAR" <%= "checked" if track.track_type == "REGULAR" %>>
 
-  <div class="field">
-    <%= form.label :band_id %>
-    <%= form.text_field :band_id %>
-  </div>
+        <label for="track_type_bonus">Bonus</label>
+        <input type="radio" name="track[track_type]" id="track_type_bonus" value="BONUS" <%= "checked" if track.track_type == "BONUS" %>>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <label for="track_lyrics" class="radio_button_label">Lyrics:</label>
+  <textarea name="track[lyrics]" id="track_lyrics" wrap="off" cols="30" row="10" class="general_textarea">
+    <%= track.lyrics %>
+  </textarea>
+
+  <input type="submit" value="<%= submit_value %>" class="login_signup_button">
+  
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<!-- # <%= form_with(model: track, local: true, html: { class: "login_signup_form" }) do |form| %>
+#   <% if track.errors.any? %>
+#     <div id="error_explanation">
+#       <h2><%= pluralize(track.errors.count, "error") %> prohibited this track from being saved:</h2>
+
+#       <ul>
+#       <% track.errors.full_messages.each do |message| %>
+#         <li><%= message %></li>
+#       <% end %>
+#       </ul>
+#     </div>
+#   <% end %>
+
+#   <div class="field">
+#     <%= form.label :title %>
+#     <%= form.text_area :title %>
+#   </div>
+
+#   <div class="field">
+#     <%= form.label :ord %>
+#     <%= form.number_field :ord %>
+#   </div>
+
+#   <div class="field">
+#     <%= form.label :lyrics %>
+#     <%= form.text_area :lyrics %>
+#   </div>
+
+#   <div class="field">
+#     <%= form.label :album_id %>
+#     <%= form.text_field :album_id %>
+#   </div>
+
+#   <div class="field">
+#     <%= form.label :band_id %>
+#     <%= form.text_field :band_id %>
+#   </div>
+
+#   <div class="actions">
+#     <%= form.submit %>
+#   </div>
+# <% end %> -->

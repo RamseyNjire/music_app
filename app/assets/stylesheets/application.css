@@ -107,7 +107,7 @@ nav {
     border: 1px solid black;
     border-radius: 5px;
     font-size: 20px;
-    color: var(--second-purple)
+    color: var(--second-purple);
 }
 
 .logout_button {
@@ -142,13 +142,13 @@ h1 {
 /* === LOGIN AND SIGNUP FORM === */
 
 .login_signup_form {
-    /* padding: 70px; */
+    padding: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px;
-    width: 350px;
+    min-height: 300px;
+    min-width: 350px;
     font-size: 20px;
     border: 1px solid var(--music-gray);
     border-radius: 5px;
@@ -170,7 +170,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    width: 80%;
+    min-width: 80%;
 }
 
 .input_field_holder label {
@@ -179,7 +179,7 @@ h1 {
 }
 
 .input_field_holder input {
-    width: 60%;
+    min-width: 60%;
 }
 
 .last_input {
