@@ -26,14 +26,21 @@
 #                           PATCH  /bands/:id(.:format)                                                                     bands#update
 #                           PUT    /bands/:id(.:format)                                                                     bands#update
 #                           DELETE /bands/:id(.:format)                                                                     bands#destroy
-#                    albums GET    /albums(.:format)                                                                        albums#index
-#                           POST   /albums(.:format)                                                                        albums#create
+#              album_tracks GET    /albums/:album_id/tracks(.:format)                                                       tracks#index
+#           new_album_track GET    /albums/:album_id/tracks/new(.:format)                                                   tracks#new
+#                    albums POST   /albums(.:format)                                                                        albums#create
 #                edit_album GET    /albums/:id/edit(.:format)                                                               albums#edit
 #                     album GET    /albums/:id(.:format)                                                                    albums#show
 #                           PATCH  /albums/:id(.:format)                                                                    albums#update
 #                           PUT    /albums/:id(.:format)                                                                    albums#update
 #                           DELETE /albums/:id(.:format)                                                                    albums#destroy
-#                      root GET    /                                                                                        users#new
+#                    tracks GET    /tracks(.:format)                                                                        tracks#index
+#                           POST   /tracks(.:format)                                                                        tracks#create
+#                edit_track GET    /tracks/:id/edit(.:format)                                                               tracks#edit
+#                     track GET    /tracks/:id(.:format)                                                                    tracks#show
+#                           PATCH  /tracks/:id(.:format)                                                                    tracks#update
+#                           PUT    /tracks/:id(.:format)                                                                    tracks#update
+#                           DELETE /tracks/:id(.:format)                                                                    tracks#destroy
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -41,7 +48,6 @@
 #      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
-  resources :tracks
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
   resource :session
@@ -50,7 +56,11 @@ Rails.application.routes.draw do
     resources :albums , only: [:new, :index]
   end
 
-  resources :albums, except: :new
+  resources :albums, except: [:new, :index] do
+    resources :tracks, only: [:new, :index]
+  end
+
+  resources :tracks, except: :new
 
 
   # root to: "users#new"
