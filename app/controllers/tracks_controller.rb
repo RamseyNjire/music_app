@@ -14,6 +14,7 @@ class TracksController < ApplicationController
   # GET /tracks/new
   def new
     @track = Track.new
+    @album = Album.find_by(id: params[:album_id])
   end
 
   # GET /tracks/1/edit
