@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  ord: 1
+  lyrics: MyText
+  album: one
+  band: one
+
+two:
+  title: MyText
+  ord: 1
+  lyrics: MyText
+  album: two
+  band: two
