@@ -33,6 +33,16 @@ class AlbumsController < ApplicationController
         @band = @album.band
     end
 
+    def update
+        @album = Album.find_by(id: params[:id])
+
+        if @album.update_attributes(album_params)
+            redirect_to album_url(@album)
+        else
+            render json: @album.errors.full_messages
+        end
+    end
+
 
     private
 
