@@ -1,3 +1,6 @@
 <h1>Edit Album "<%= @album.title %>" for <%= @band.name %></h1>
 
-<%= render "form", action: "edit", band: @band, album: @album %>
+<div class="band_card">
+    <%= render "form", action: "edit", band: @band, album: @album %>
+    <a href="<%= band_albums_url(@band) %>" class="login_signup_button">Back To Albums</a>
+</div>

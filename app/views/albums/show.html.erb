@@ -1,1 +1,6 @@
-<%= render 'album', album: @album %>
+<div class="band_card">
+    <%= render 'album', album: @album %>
+
+    <a href="<%= edit_album_url(@album) %>" class="login_signup_button">Edit Album</a>
+    <a href="<%= band_albums_url(@band) %>" class="login_signup_button">Back To Albums</a>
+</div>

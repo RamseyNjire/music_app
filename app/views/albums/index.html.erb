@@ -1,4 +1,4 @@
-<h1><%= @band.name %>'s Albums</h1>
+<h1> <a href="<%= band_url(@band) %>" class="band_name"><%= @band.name %>'s</a> Albums</h1>
 
 <% @albums.each do |album| %>
     <div class="band_card">
