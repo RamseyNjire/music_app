@@ -1,0 +1,36 @@
+<% action_url = (action == "create") ? albums_url : album_url(album) %>
+<% submit_value = (action == "create") ? "Create Album" : "Update Album" %>
+
+
+<form action="<%= action_url %>" method="post" class="login_signup_form" id="new_album_form">
+    <%= auth_token %>
+    <% if action == "edit" %>
+        <%= patch_method %>
+    <% end %>
+
+    <input type="hidden" name="album[band_id]" value="<%= band.id %>">
+
+    <div class="input_field_holder">
+        <label for="album_title">Title:</label>
+        <input type="text" name="album[title]" id="album_title" value ="<%= album.title %>">
+    </div>
+
+
+    <div class="input_field_holder">
+        <label for="album_year">Year:</label>
+        <input type="number" name="album[year]" id="album_year" value ="<%= album.year %>">
+    </div>
+
+
+    <label class="radio_button_label">Album Type:</label>
+
+    <div class="radio_button_holder">
+        <label for="album_type_live">Live</label>
+        <input type="radio" name="album[album_type]" value="LIVE" <%= "checked" if album.album_type == "LIVE" %>>
+
+        <label for="album_type_studio">Studio</label>
+        <input type="radio" name="album[album_type]" id="album_type_studio" value="STUDIO" <%= "checked" if album.album_type == "STUDIO" %>>
+    </div>
+
+    <input type="submit" value="<%= submit_value %>" class="login_signup_button">
+</form>
