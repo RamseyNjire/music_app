@@ -42,14 +42,11 @@ class TracksController < ApplicationController
 
   # PATCH/PUT /tracks/1 or /tracks/1.json
   def update
-    respond_to do |format|
-      if @track.update(track_params)
-        format.html { redirect_to @track, notice: "Track was successfully updated." }
-        format.json { render :show, status: :ok, location: @track }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @track.errors, status: :unprocessable_entity }
-      end
+    @track = Track.find_by(id: params[:id])
+    if @track.update_attributes(track_params)
+      redirect_to track_url(@track)
+    else
+      render json: @track.errors.full_messages
     end
   end
 
