@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
   before_action :set_track, only: %i[ show edit update destroy ]
+  before_action :require_current_user!
 
   # GET /tracks or /tracks.json
   def index
