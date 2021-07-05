@@ -1,6 +1,7 @@
-<h1>Editing Track</h1>
+<h1>Edit <%= @track.title %></h1>
 
-<%= render 'form', track: @track, album: @album, band: @band, action: "edit" %>
+<div class="band_card">
+    <%= render 'form', track: @track, album: @album, band: @band, action: "edit" %>
 
-<%= link_to 'Show', @track %> |
-<%= link_to 'Back', tracks_path %>
+    <a href="<%= track_url(@track) %>" class="login_signup_button">Back To Track</a>
+</div>
