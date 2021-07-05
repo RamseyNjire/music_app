@@ -47,14 +47,12 @@ class TracksController < ApplicationController
     end
   end
 
-  # DELETE /tracks/1 or /tracks/1.json
-  # def destroy
-  #   @track.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to tracks_url, notice: "Track was successfully destroyed." }
-  #     format.json { head :no_content }
-  #   end
-  # end
+  DELETE /tracks/1 or /tracks/1.json
+  def destroy
+    @album = @track.album
+    @track.destroy
+    redirect_to album_tracks_url(@album)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
