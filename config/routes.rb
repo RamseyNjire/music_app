@@ -34,13 +34,17 @@
 #                           PATCH  /albums/:id(.:format)                                                                    albums#update
 #                           PUT    /albums/:id(.:format)                                                                    albums#update
 #                           DELETE /albums/:id(.:format)                                                                    albums#destroy
-#                    tracks GET    /tracks(.:format)                                                                        tracks#index
-#                           POST   /tracks(.:format)                                                                        tracks#create
+#               track_notes GET    /tracks/:track_id/notes(.:format)                                                        notes#index
+#            new_track_note GET    /tracks/:track_id/notes/new(.:format)                                                    notes#new
+#                    tracks POST   /tracks(.:format)                                                                        tracks#create
 #                edit_track GET    /tracks/:id/edit(.:format)                                                               tracks#edit
 #                     track GET    /tracks/:id(.:format)                                                                    tracks#show
 #                           PATCH  /tracks/:id(.:format)                                                                    tracks#update
 #                           PUT    /tracks/:id(.:format)                                                                    tracks#update
 #                           DELETE /tracks/:id(.:format)                                                                    tracks#destroy
+#                     notes POST   /notes(.:format)                                                                         notes#create
+#                      note DELETE /notes/:id(.:format)                                                                     notes#destroy
+#                      root GET    /                                                                                        users#new
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -60,7 +64,11 @@ Rails.application.routes.draw do
     resources :tracks, only: [:new, :index]
   end
 
-  resources :tracks, except: [:new, :index]
+  resources :tracks, except: [:new, :index] do
+    resources :notes, only: [:new, :index]
+  end
+
+  resources :notes, only: [:create, :destroy]
 
 
   root to: "users#new"
