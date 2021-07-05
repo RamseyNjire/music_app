@@ -18,6 +18,8 @@ class User < ApplicationRecord
     validates :email, uniqueness: { message: "^Email already taken" }
     after_initialize :ensure_session_token
 
+    has_many :notes, dependent: :destroy
+
 
 
 
