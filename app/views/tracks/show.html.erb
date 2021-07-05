@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @track.title %>
-</p>
 
-<p>
-  <strong>Ord:</strong>
-  <%= @track.ord %>
-</p>
+<h1><%= @track.title %></h1>
 
-<p>
-  <strong>Lyrics:</strong>
-  <%= @track.lyrics %>
-</p>
+<table class="album_table">
+  <caption>Track</caption>
+  <tr>
+    <td>Title:</td>
+    <td><%= @track.title %></td>
+  </tr>
+  <tr>
+    <td>Album:</td>
+    <td><%= @track.album.title %></td>
+  </tr>
+  <tr>
+    <td>Track Number:</td>
+    <td><%= @track.ord %></td>
+  </tr>
+</table>
 
-<p>
-  <strong>Album:</strong>
-  <%= @track.album %>
-</p>
+<h2>Lyrics:</h2>
 
-<p>
-  <strong>Band:</strong>
-  <%= @track.band %>
-</p>
+<div class="lyrics_display">
+  <pre>
+    <%= @track.lyrics %>
+  </pre>
+</div>
 
-<%= link_to 'Edit', edit_track_path(@track) %> |
-<%= link_to 'Back', tracks_path %>
+<div class="button_container">
+  <a href="<%= edit_track_path(@track) %>" class="login_signup_button">Edit Track</a>
+<a href="<%= tracks_path(@track.album) %>" class="login_signup_button">Back to <%= @track.album.title %>' tracks </a>
+</div>
