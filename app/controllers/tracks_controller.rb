@@ -22,6 +22,9 @@ class TracksController < ApplicationController
 
   # GET /tracks/1/edit
   def edit
+    @track = Track.find_by(id: params[:id])
+    @album = @track.album
+    @band = @track.band
   end
 
   # POST /tracks or /tracks.json
