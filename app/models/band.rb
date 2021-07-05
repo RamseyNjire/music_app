@@ -9,6 +9,6 @@
 #
 class Band < ApplicationRecord
     validates :name, presence: { message: "^Band must have a name" }
-    has_many :albums
-    has_many :tracks
+    has_many :albums, dependent: :destroy
+    has_many :tracks, dependent: :destroy
 end
