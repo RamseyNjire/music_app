@@ -63,5 +63,5 @@ Rails.application.routes.draw do
   resources :tracks, except: [:new, :index]
 
 
-  # root to: "users#new"
+  root to: "users#new"
 end
