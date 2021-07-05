@@ -1,35 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tracks</h1>
+<h1>Tracks for <a href="<%= album_url(@album) %>" class="band_name"><%= @album.title %></a></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Ord</th>
-      <th>Lyrics</th>
-      <th>Album</th>
-      <th>Band</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tracks.each do |track| %>
-      <tr>
-        <td><%= track.title %></td>
-        <td><%= track.ord %></td>
-        <td><%= track.lyrics %></td>
-        <td><%= track.album %></td>
-        <td><%= track.band %></td>
-        <td><%= link_to 'Show', track %></td>
-        <td><%= link_to 'Edit', edit_track_path(track) %></td>
-        <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Track', new_track_path %>
+<% @tracks.each do |track| %>
+  <div class="band_card">
+    <%= render track %>
+    <a href="<%= track_url(track) %>" class="login_signup_button">View Track</a>
+  </div>
+<% end %>
