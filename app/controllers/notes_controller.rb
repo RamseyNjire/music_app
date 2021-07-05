@@ -1,5 +1,10 @@
 class NotesController < ApplicationController
     before_action :require_current_user!
+
+    def index
+        @track = Track.find_by(id: params[:track_id])
+        @notes = Note.where(track_id: params[:track_id]).includes(:author)
+    end
     
     private
 
