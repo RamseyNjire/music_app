@@ -5,7 +5,7 @@
 <form action="<%= action_url %>" method="post" class="login_signup_form">
   <%= auth_token %>
   <% if action == "edit" %>
-    <%= delete_method %>
+    <%= patch_method %>
   <% end %>
 
   <input type="hidden" name="track[album_id]" value="<%= album.id %>">
@@ -33,7 +33,7 @@
 
   <label for="track_lyrics" class="radio_button_label">Lyrics:</label>
   <textarea name="track[lyrics]" id="track_lyrics" wrap="off" cols="30" row="30" class="general_textarea">
-  <%= track.lyrics %>
+<%= track.lyrics %>
   </textarea>
 
   <input type="submit" value="<%= submit_value %>" class="login_signup_button">

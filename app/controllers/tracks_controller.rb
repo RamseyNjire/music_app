@@ -9,7 +9,6 @@ class TracksController < ApplicationController
 
   # GET /tracks/1 or /tracks/1.json
   def show
-    @track = Track.find_by(id: params[:id])
     @album = @track.album
   end
 
@@ -22,7 +21,6 @@ class TracksController < ApplicationController
 
   # GET /tracks/1/edit
   def edit
-    @track = Track.find_by(id: params[:id])
     @album = @track.album
     @band = @track.band
   end
@@ -42,7 +40,6 @@ class TracksController < ApplicationController
 
   # PATCH/PUT /tracks/1 or /tracks/1.json
   def update
-    @track = Track.find_by(id: params[:id])
     if @track.update_attributes(track_params)
       redirect_to track_url(@track)
     else
@@ -51,18 +48,18 @@ class TracksController < ApplicationController
   end
 
   # DELETE /tracks/1 or /tracks/1.json
-  def destroy
-    @track.destroy
-    respond_to do |format|
-      format.html { redirect_to tracks_url, notice: "Track was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @track.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to tracks_url, notice: "Track was successfully destroyed." }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_track
-      @track = Track.find(params[:id])
+      @track = Track.find_by(id: params[:id])
     end
 
     # Only allow a list of trusted parameters through.
