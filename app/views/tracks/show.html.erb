@@ -15,5 +15,10 @@
 
 <div class="button_container">
   <a href="<%= edit_track_url(@track) %>" class="login_signup_button">Edit Track</a>
-<a href="<%= album_tracks_url(@album) %>" class="login_signup_button">Back to <%= @album.title %>'s tracks </a>
+  <form action="<%= track_url(@track) %>" method="post">
+      <%= auth_token %>
+      <%= delete_method %>
+      <input type="submit" value="Delete Track" class="login_signup_button delete_button">
+  </form>
+  <a href="<%= album_tracks_url(@album) %>" class="login_signup_button">Back to <%= @album.title %>'s tracks </a>
 </div>

@@ -47,7 +47,7 @@ class TracksController < ApplicationController
     end
   end
 
-  DELETE /tracks/1 or /tracks/1.json
+  # DELETE /tracks/1 or /tracks/1.json
   def destroy
     @album = @track.album
     @track.destroy
