@@ -13,5 +13,10 @@ class Note < ApplicationRecord
   validates :text, presence: true
   
   belongs_to :track
-  belongs_to :user
+  belongs_to(
+    :author,
+    class_name: 'User',
+    foreign_key: :user_id,
+    primary_key: :id
+  )
 end
