@@ -5,12 +5,13 @@ class TracksController < ApplicationController
   # GET /tracks or /tracks.json
   def index
     @album = Album.find_by(id: params[:album_id])
-    @tracks = Track.where(album_id: params[:album_id]).includes(notes: :author)
+    @tracks = Track.where(album_id: params[:album_id])
   end
 
   # GET /tracks/1 or /tracks/1.json
   def show
     @album = @track.album
+    @notes = @track.notes
   end
 
   # GET /tracks/new

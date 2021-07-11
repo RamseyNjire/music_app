@@ -34,8 +34,6 @@
 #                           PATCH  /albums/:id(.:format)                                                                    albums#update
 #                           PUT    /albums/:id(.:format)                                                                    albums#update
 #                           DELETE /albums/:id(.:format)                                                                    albums#destroy
-#               track_notes GET    /tracks/:track_id/notes(.:format)                                                        notes#index
-#            new_track_note GET    /tracks/:track_id/notes/new(.:format)                                                    notes#new
 #                    tracks POST   /tracks(.:format)                                                                        tracks#create
 #                edit_track GET    /tracks/:id/edit(.:format)                                                               tracks#edit
 #                     track GET    /tracks/:id(.:format)                                                                    tracks#show
