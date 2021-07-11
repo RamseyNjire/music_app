@@ -75,6 +75,10 @@ body {
     color: var(--music-gray)
 }
 
+textarea {
+    border-radius: 5px;
+}
+
 /* === COLOR THEME VARIABLES === */
 
 :root {

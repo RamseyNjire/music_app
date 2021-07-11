@@ -3,26 +3,35 @@
 
 <h1><%= @track.title %></h1>
 
-<%= render 'track', track: @track, album: @album %>
+<div class="track_show_container">
+  <div class="track_display">
+    <%= render 'track', track: @track, album: @album %>
 
-<h2>Lyrics:</h2>
+    <h2>Lyrics:</h2>
 
-<div class="lyrics_display">
-  <pre>
-    <%= @track.lyrics %>
-  </pre>
-</div>
+    <div class="lyrics_display">
+      <pre>
+        <%= @track.lyrics %>
+      </pre>
+    </div>
 
-<div class="notes_display">
-  
-</div>
+    <div class="button_container">
+      <a href="<%= edit_track_url(@track) %>" class="login_signup_button">Edit Track</a>
+      <form action="<%= track_url(@track) %>" method="post">
+          <%= auth_token %>
+          <%= delete_method %>
+          <input type="submit" value="Delete Track" class="login_signup_button delete_button">
+      </form>
+      <a href="<%= album_tracks_url(@album) %>" class="login_signup_button">Back to <%= @album.title %>'s tracks </a>
+    </div>
+  </div>
 
-<div class="button_container">
-  <a href="<%= edit_track_url(@track) %>" class="login_signup_button">Edit Track</a>
-  <form action="<%= track_url(@track) %>" method="post">
+  <div class="notes_display">
+    <form action="<%= notes_url %>" method="post">
       <%= auth_token %>
-      <%= delete_method %>
-      <input type="submit" value="Delete Track" class="login_signup_button delete_button">
-  </form>
-  <a href="<%= album_tracks_url(@album) %>" class="login_signup_button">Back to <%= @album.title %>'s tracks </a>
+      <textarea name="note[text]" id="note_text" cols="28" rows="10" placeholder="Write a note..."></textarea>
+      <input type="submit" value="Create Note" class="login_signup_button delete_button">
+    </form>
+
+  </div>
 </div>
