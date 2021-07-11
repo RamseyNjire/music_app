@@ -1,0 +1,5 @@
+<form action="<%= notes_url %>" method="post">
+      <%= auth_token %>
+      <textarea name="note[text]" id="note_text" cols="28" rows="10" placeholder="Write a note..."></textarea>
+      <input type="submit" value="Create Note" class="login_signup_button delete_button">
+</form>
