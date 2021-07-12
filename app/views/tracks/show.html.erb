@@ -10,9 +10,7 @@
     <h2>Lyrics:</h2>
 
     <div class="lyrics_display">
-      <pre>
-        <%= @track.lyrics %>
-      </pre>
+      <%= ugly_lyrics(@track.lyrics) %>
     </div>
 
     <div class="button_container">
