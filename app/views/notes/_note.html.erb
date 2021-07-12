@@ -1,7 +1,7 @@
 <span><%= note.author.username %>(<%= note.author.email %>)</span>
 <p><%= note.text %></p>
 <% if current_user == note.author %>
-    <form action="<% note_url(note) %>" method="post">
+    <form action="<%= note_url(note) %>" method="post">
         <%= auth_token %>
         <%= delete_method %>
         <input type="submit" value="Delete" class="login_signup_button delete_note_button">

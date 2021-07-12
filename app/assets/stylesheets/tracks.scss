@@ -58,6 +58,9 @@
             font-size: 12px;
             border-radius: 2px;
             margin-bottom: 5px;
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         .create_note_form {
