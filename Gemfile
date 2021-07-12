@@ -54,6 +54,7 @@ group :development do
   gem 'pry-rails'
   gem 'annotate'
   gem 'pgreset'
+  gem 'binding_of_caller'
 end
 
 group :test do

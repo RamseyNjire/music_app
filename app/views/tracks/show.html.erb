@@ -27,6 +27,10 @@
   </div>
 
   <div class="notes_display">
-    <%= render 'notes/note' %>
+    <% @track.notes.each do |note| %>
+      <h1><%= note.author.username %></h1>
+      <p><%= note.text %></p>
+    <% end %>
+    <%= render 'notes/form', track: @track %>
   </div>
 </div>

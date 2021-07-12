@@ -3,7 +3,7 @@ class NotesController < ApplicationController
 
     def create
         @note = Note.new(note_params)
-        @track = Track.find_by(id: note_params[:note[:track_id]])
+        @track = Track.find_by(id: params[:note][:track_id])
 
         @note.save
         

@@ -56,6 +56,8 @@ GEM
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
     bindex (0.8.1)
+    binding_of_caller (1.0.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.7.5)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -83,6 +85,7 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     custom_error_message (1.1.1)
+    debug_inspector (1.1.0)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.3)
@@ -208,6 +211,7 @@ DEPENDENCIES
   annotate
   bcrypt (~> 3.1.7)
   better_errors
+  binding_of_caller
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
