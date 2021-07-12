@@ -35,7 +35,8 @@ class TracksController < ApplicationController
     if @track.save
       redirect_to track_url(@track)
     else
-      render json: @track.errors.full_messages
+      flash.now[:errors] = @track.errors.full_messages
+      render :new
     end
 
   end
@@ -45,7 +46,8 @@ class TracksController < ApplicationController
     if @track.update_attributes(track_params)
       redirect_to track_url(@track)
     else
-      render json: @track.errors.full_messages
+      flash.now[:errors] = @track.errors.full_messages
+      render :edit
     end
   end
 
