@@ -12,6 +12,10 @@ Viewing a single band:
 
 ![band view page](images/band_view_page.png)
 
+Viewing an album track with its lyrics and notes:
+
+![track view page](images/track_view_page.png)
+
 In this project, I
 
 - Implement some basic routes;
