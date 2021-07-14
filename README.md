@@ -38,7 +38,8 @@ In this project, I
 - Run `rails s` to start a server in your computer;
 - Run `rails routes` to see the available API endpoints (ignoring Rails generated routes, of course);
 - Test each of them with Postman. You can find out how to install postman [here](https://www.getpostman.com/)
-- Test view manually. There is no test suite for this project, though there might be one in te future.
+- Test views manually. There is no test suite for this project, though there might be one in te future.
+- To actually use the app, visit `localhost:3000` on your favorite browser, assuming the server is running, signup, and explore.
 
 ## My Social Handles
 
