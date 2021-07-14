@@ -8,6 +8,10 @@ The bands index page:
 
 ![bands index page](images/bands_page.png)
 
+Viewing a single band:
+
+![band view page](images/band_view_page.png)
+
 In this project, I
 
 - Implement some basic routes;
