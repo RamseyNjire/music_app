@@ -18,14 +18,10 @@ Viewing an album track with its lyrics and notes:
 
 In this project, I
 
-- Implement some basic routes;
-- Build models for users and art, as well as others, including a join table (artshares);
-- Write migrations for those models to evolve the schema;
-- Write DB- and model-level validations for certain attributes;
-- Seed the database with some starter data;
-- Create an API layer using different controllers to handle requests from the API endpoints;
-- Use Postman to test each of the endpoints to make sure they are working properly;
-- Use gitflow.
+- Build authentication from scratch. It involves a single session per user, which means you can only be logged in from one browser at a time.
+- Work extensively with Rails view, rounding out the V in MVC.
+- Use Rails view helpers extensively to clean up view code.
+- Restrict many actions for unregistered and unlogged-in users. This was a good study in authentication and how you can use it to implement authorization.
 
 ## Built With
 
@@ -42,6 +38,7 @@ In this project, I
 - Run `rails s` to start a server in your computer;
 - Run `rails routes` to see the available API endpoints (ignoring Rails generated routes, of course);
 - Test each of them with Postman. You can find out how to install postman [here](https://www.getpostman.com/)
+- Test view manually. There is no test suite for this project, though there might be one in te future.
 
 ## My Social Handles
 
