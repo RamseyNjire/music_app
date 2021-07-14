@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
         )
 
         if user.nil?
-            flash.now[:errors] = "Username or email is incorrect"
-            render :new
+            render json: "Username or email is incorrect"
         else
             login!(user)
             redirect_to user_url(user)
