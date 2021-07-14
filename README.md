@@ -4,7 +4,9 @@ This project involves all the major aspects of Rails, excluding testing. I built
 
 Below are some screenshots for demonstration:
 
+The bands index page:
 
+![bands index page](images/bands_page.png)
 
 In this project, I
 
