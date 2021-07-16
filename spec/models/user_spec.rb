@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { build(:user) }
+  subject(:user) { create(:user) }
 
   describe "validations" do
     it { should validate_presence_of(:username) }
@@ -26,5 +26,13 @@ RSpec.describe User, type: :model do
 
   describe "associations" do
     it { should have_many(:notes).dependent(:destroy) }
+  end
+
+  describe "#is_password?" do
+    it "returns true when password matches" do
+      expect{ user.is_password?("password").to eq(true) }
+    end
+
+    
   end
 end
