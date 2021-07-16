@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject(:user) { create(:user) }
+  subject(:user) { build(:user) }
 
   describe "validations" do
     it { should validate_presence_of(:username) }
@@ -44,6 +44,25 @@ RSpec.describe User, type: :model do
       new_session_token = user.reset_session_token
 
       expect(new_session_token).not_to eq(old_session_token)
+    end
+  end
+
+  describe "::find_by_credentials" do
+    before { user.save! }
+    context "user exists" do
+      it "returns the user when the password is valid" do
+        expect(User.find_by_credentials("caligula@example.com", "password")).to eq(user)
+      end
+
+      it "returns nil when the password is invalid" do
+        expect(User.find_by_credentials("caligula@example.com", "not_password")).to be_nil
+      end
+    end
+
+    context "user does not exist" do
+      it "returns nil when the user does not exist" do
+        expect(User.find_by_credentials("notcaligula@example.com", "not_password")).to be_nil
+      end
     end
   end
 end
