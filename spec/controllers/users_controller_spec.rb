@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
+    subject(:user) { build(:user) }
     describe "GET #new" do
         it "renders the new template" do
             get :new, {}
@@ -28,6 +29,15 @@ RSpec.describe UsersController, type: :controller do
 
                 expect(response).to redirect_to(user_url(augustus))
             end
+        end
+    end
+
+    describe "GET #show" do
+        before { user.save! }
+        it "renders the show template" do
+            get :show, params: { id: user.id }
+
+            expect(response).to render_template("show")
         end
     end
 end
