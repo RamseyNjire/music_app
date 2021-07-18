@@ -1,6 +1,6 @@
 # Music Inventory App
 
-This project involves all the major aspects of Rails, excluding testing. I built a music inventory app, where users can create accounts, set up bands, add albums with tracks, record notes on those tracks, and view the lyrics.
+I built a music inventory app, where users can create accounts, set up bands, add albums with tracks, record notes on those tracks, and view the lyrics. This project involves all the major aspects of Rails, including some simple unit and integration tests on the user model. 
 
 Below are some screenshots for demonstration:
 
@@ -37,8 +37,8 @@ In this project, I
 - Run `rails db:migrate`;
 - Run `rails s` to start a server in your computer;
 - Run `rails routes` to see the available API endpoints (ignoring Rails generated routes, of course);
-- Test each of them with Postman. You can find out how to install postman [here](https://www.getpostman.com/)
-- Test views manually. There is no test suite for this project, though there might be one in te future.
+- Test each of them with Postman. You can find out how to install postman [here](https://www.getpostman.com/
+- There are simple unit tests for the user model and controller, as well as an integration test for the signup process. To run the tests, just run `rspec` in the terminal.
 - To actually use the app, visit `localhost:3000` on your favorite browser, assuming the server is running, signup, and explore.
 
 ## My Social Handles
