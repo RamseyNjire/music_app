@@ -19,4 +19,16 @@ feature "the signup process" do
             expect(page).to have_content "julius@example.com"
         end
     end
+
+    feature "with an invalid user do" do
+        before(:each) do
+            visit new_user_url
+            fill_in "Username", with: "Julius"
+            click_on "Signup"
+        end
+
+        scenario "re-renders the signup page after failed signup" do
+            expect(page).to have_content "Sign Up"
+        end
+    end
 end
