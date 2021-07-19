@@ -37,7 +37,7 @@ In this project, I
 - Run `rails db:migrate`;
 - Run `rails s` to start a server in your computer;
 - Run `rails routes` to see the available API endpoints (ignoring Rails generated routes, of course);
-- Test each of them with Postman. You can find out how to install postman [here](https://www.getpostman.com/
+- Test each of them with Postman. You can find out how to install postman [here](https://www.getpostman.com/)
 - There are simple unit tests for the user model and controller, as well as an integration test for the signup process. To run the tests, just run `rspec` in the terminal.
 - To actually use the app, visit `localhost:3000` on your favorite browser, assuming the server is running, signup, and explore.
 
